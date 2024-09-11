@@ -1,0 +1,84 @@
+.ti-pn-save-action{
+    width: max-content;
+    order: 3;
+    color: #595959;
+    margin-left: auto;
+}
+.ti-pn-save-action .ti-pn-buttons{
+    background-color: #f0f0f0;
+    width: 300px;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 8px;
+}
+.save-button, .load-template{
+    background-color: rgb(37, 131, 63);
+    border-color: rgba(130, 121, 107, 0.15);
+    box-shadow: rgba(22, 25, 28, 0.1) 0px 1px 0px;
+    color: rgb(232, 230, 227);
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 4px 8px;
+}
+.ti-pn-template-manager{
+    padding: 0 20px;
+    order: 1;
+}
+.template-item{
+    width: 30%;
+}
+.template-item img{
+    width: 100%;
+}
+.ti-views.ti-pn-active {
+    background: none;
+    box-shadow: none;
+    border-bottom: 3px var(--ti-quaternary-color) solid;
+}
+.ti-pn-panels{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    border-bottom: 2px #999 solid;
+}
+.ti-pn-devices-c{
+    order: 2;
+}
+.ti-pn-views-container{
+    height: 100vh;
+    overflow-y: scroll !important;
+    padding: 60px 0 0;
+}
+#blocks, #layers{
+    z-index: 3;
+    font-family: var(--ti-main-font);
+    font-size: var(--ti-font-size);
+    position: absolute;
+    height: calc(100vh - 60px);
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    padding: 0;
+    overflow: auto;
+    background-color: #ffffff;
+    transition: 1s;
+}
+.hidden-panel{
+    margin-left: -15%;
+}
+.blocks-button{
+    background-color: var(--ti-quaternary-color) !important;
+    color: white;
+    margin: 0 15px;
+}
+.ti-frame{
+    margin-top: 20px;
+    transition: 1s;
+}
+.panel-opened{
+    padding-left: 17.7%;
+}

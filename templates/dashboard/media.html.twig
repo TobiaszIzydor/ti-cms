@@ -1,0 +1,18 @@
+{{ encore_entry_link_tags('media_edit') }}
+{% for message in app.flashes('dropzone_success') %}
+    <div class="alert alert-success" data-turbo-cache="false">{{ message }}</div>
+{% endfor %}
+<form action="{{ path('tipanel_media') }}" method="post" enctype="multipart/form-data">    
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit" class="dropzone-btn">Upload it!</button>
+{{ form_end(form) }}
+</form>
+<div class="media-gallery-label">
+<h1>Image gallery</h1>
+</div>
+<div class="media-gallery-images">
+{% for image in media %}
+    <img class="gallery-image" src="/images/{{ image.source }}" data-id="{{ image.id }}" description="{{ image.description }}" title="{{ image.title }}" alt="{{ image.alt }}">
+{% endfor %}
+</div>

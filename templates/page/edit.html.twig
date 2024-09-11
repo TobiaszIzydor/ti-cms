@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            {{ encore_entry_link_tags('editor') }}
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <style>
+                body, html {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
+                #gjs {
+                    height: 100vh;
+                    width: 100%;
+                }
+            </style>
+            
+            </style>
+        {% endblock %}
+
+        {% block javascripts %}
+            
+            {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('editor') }}
+            <script>
+            window.pageName = "{{ page.name }}";
+            </script>
+        {% endblock %}
+    </head>
+    <body>
+                <div id="editor-container" style="display:none;">
+            <style>{{ page.template }}</style>
+            {{ page_content|raw }}
+        </div>
+        
+            <div id="blocks" class="hidden-panel"></div>
+            <div id="layers" class="hidden-panel"></div>
+        <div id="gjs" style="height:100vh;">
+            <!-- Content from `{{ page.content|raw }}` will be loaded here by the script below -->
+        </div>
+
+        <script type="text/javascript">
+                const editorContent = document.getElementById('editor-container').innerHTML;
+        </script>
+        {{ encore_entry_script_tags('editor') }}
+        <script>                
+       
+            </script>
+
+    </body>
+</html>

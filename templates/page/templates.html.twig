@@ -1,0 +1,12 @@
+
+{% block body %}
+    <div class="ti-d-flex-align-center"><h1>Szablony</h1><button id="add-page" class="ti-btn-outlined">Add page</button></div>
+    <div class="ti-templates">
+        {% for template in templates %}
+        <div class="ti-template">
+            <div class="ti-template-title"><img src="{{ template.img }}"></div>
+            <div class="ti-template-name">{{ template.name }}</div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+
+{% block body %}
+    <div class="ti-d-flex-align-center"><h1>Strony</h1><button id="add-page" class="ti-btn-outlined">Add page</button></div>
+    <table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Route</th>
+            <th>Author</th>
+            <th>Modification Date</th>
+            <th>Visible</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for page in pages %}
+        <tr class="ti-page">
+            <td class="ti-page-title">{{ page.Title }}</td>
+            <td class="ti-page-name">{{ page.Name }}</td>
+            <td class="ti-page-author">{{ page.author }}</td>
+            <td class="ti-page-modification-date">{{ page.modification_date|date('d.m.Y H:i:s') }}</td>
+            <td class="ti-page-visibility">
+            <input type="checkbox" name="page-visibility" id="page-visibility"    
+            {% if page.status == 'visible' %}
+            checked
+            {% endif %}
+            >
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
